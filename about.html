@@ -18,12 +18,12 @@
         .NAME
         {
             width: 31%;
-    
+            font-size: 20px;
             margin-left: 1.5%;
         }
         input
         {
-            width: 60%;
+            width: 59%;
             height: 5vh;
             border: none;
             font-size: 20px;
@@ -46,17 +46,59 @@
             margin-left: 1.5%;
             width: 96%;
         }
+        th
+        {
+            font-size: 20px;
+        }
+        .button
+        {
+            gap: 50%;
+        }
+        @media(max-width:600px)
+        {
+            h2
+            {
+                font-size: 15px;
+            }
+            .NAME
+            {
+                font-size: 18px;
+                width: 80%;
+            }
+            .flex
+            {
+                flex-wrap: wrap;
+            }
+            input
+            {
+                width: 60%;
+                font-size: 18px;
+            }
+           .button
+           {
+            gap: 38%;
+           }
+           th
+           {
+            font-size: 15px;
+           }
+           .result
+           {
+            width: 100%;
+            height: 100vh;
+           }
+        }
     </style>
 </head>
 <body>
     <div class="result">
         <h2 style="text-align: center;">WEST BENGAL STATE COUNCIL OF TECHNICAL AND VOCATIONAL EDUCATION AND SKILL DEVELOPMENT</h2>
-        <h2 style="text-align: center;"><b>MARK SHEET</b><span style="font-size: 18px;"><br>OF<br>(X+2) LEVEL HIGHER SECONDARY (VOCATIONAL) EXAMINATION,2024</span></h2>
-            <div class="NAME"><span style="font-size: large;"><b>Name of the Student:</b></bName></span> <input type="text" id="namem"></div>
+        <h2 style="text-align: center;"><b>MARK SHEET</b><br>OF<br>(X+2) LEVEL HIGHER SECONDARY (VOCATIONAL) EXAMINATION,2024</span></h2>
+            <div class="NAME"><span><b>Name of the Student:</b> <input type="text" id="namem"></div>
             <div class="flex">
-                <div class="NAME roll"><span style="font-size: large;"><b>Roll:</b></bName></span> <input type="text" id="roll"></div>
-                <div class="NAME"><span style="font-size: large;"><b>Registration No: </b></span><input type="tel" id="regis"></div>
-                <div class="NAME"><span style="font-size: x-large;"><b>of: </b></span><input type="tel" id="year"></div>
+                <div class="NAME roll"><b>Roll:</b><input type="text" id="roll"></div>
+                <div class="NAME"><b>Registration No: </b><input type="tel" id="regis"></div>
+                <div class="NAME"><b>of: </b><input type="tel" id="year"></div>
             </div>
             <div class="NAME scholl"><span style="font-size: large;"><b>Name of Institurtion </b></span><input type="text"id="scholl"></div>
         <table border="1"  cellspacing="0" cellpadding="0" style="text-align: center;">
@@ -136,7 +178,7 @@
                 <td id="jwpdtotal"></td>
             </tr>
         </table>
-        <div style="display: flex; gap: 50%;">
+        <div style="display: flex;" class="button">
         <table border="1" style="width: 40%; height: 15vh; text-align: center;" cellspacing="0" cellpadding="0">
             <tr>
                 <th rowspan="2" style="width: 25%; font-size: large;">Grand Total</th>
@@ -148,7 +190,7 @@
                 <td id="totalmark"></td>
             </tr>
         </table>
-        <div style="margin-top: 7%;"><button style=" height: 6vh; border-radius: 5px; background-color: aqua;" onclick="shit()">Back TO Home</button></div>
+        <div style="margin-top: 7%;" class="button"><button style=" height: 6vh; border-radius: 5px; background-color: aqua;" onclick="shit()">Back TO Home</button></div>
         </div>
     </div>
     <script>
