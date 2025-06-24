@@ -28,10 +28,37 @@
         {
             padding-left: 2%;
         }
+        table
+        {
+            text-align: left;
+            width: 35%;
+            height: 40vh;
+            font-size: large;
+        }
+        @media(max-width:600px)
+        {
+            table
+            {
+                width: 95%;
+                font-size: 15px;
+            }
+            input
+            {
+                font-size: 18px;
+            }
+            button
+            {
+                width: 50%;
+            }
+            th
+            {
+                width: 40%;
+            }
+        }
     </style>
 </head>
 <body>
-    <table border="1" style="text-align: left; width: 35%; height: 40vh; font-size: large;"cellspacing="0" cellpadding="0" align="center">
+    <table border="1" cellspacing="0" cellpadding="0" align="center">
         <tr>
             <th>Name: </th>
             <td style="width: 40%;"><input type="text" placeholder="Name" id="name"></td>
