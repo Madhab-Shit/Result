@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .result
+        {
+            height: 97vh;
+            border: 2px solid black;
+        }
+        .flex
+        {
+            display: flex;
+            margin-top: 2%;
+        }
+        .NAME
+        {
+            width: 31%;
+    
+            margin-left: 1.5%;
+        }
+        input
+        {
+            width: 60%;
+            height: 5vh;
+            border: none;
+            font-size: 20px;
+        }
+        .roll
+        {
+            width: 25%;
+        }
+        .roll input
+        {
+            width: 80%;
+        }
+        .scholl
+        {
+            width: 90%;
+            margin-top: 2%;
+        }
+        table{
+            margin-top: 2%;
+            margin-left: 1.5%;
+            width: 96%;
+        }
+    </style>
+</head>
+<body>
+    <div class="result">
+        <h2 style="text-align: center;">WEST BENGAL STATE COUNCIL OF TECHNICAL AND VOCATIONAL EDUCATION AND SKILL DEVELOPMENT</h2>
+        <h2 style="text-align: center;"><b>MARK SHEET</b><span style="font-size: 18px;"><br>OF<br>(X+2) LEVEL HIGHER SECONDARY (VOCATIONAL) EXAMINATION,2024</span></h2>
+            <div class="NAME"><span style="font-size: large;"><b>Name of the Student:</b></bName></span> <input type="text" id="namem"></div>
+            <div class="flex">
+                <div class="NAME roll"><span style="font-size: large;"><b>Roll:</b></bName></span> <input type="text" id="roll"></div>
+                <div class="NAME"><span style="font-size: large;"><b>Registration No: </b></span><input type="tel" id="regis"></div>
+                <div class="NAME"><span style="font-size: x-large;"><b>of: </b></span><input type="tel" id="year"></div>
+            </div>
+            <div class="NAME scholl"><span style="font-size: large;"><b>Name of Institurtion </b></span><input type="text"id="scholl"></div>
+        <table border="1"  cellspacing="0" cellpadding="0" style="text-align: center;">
+            <tr>
+                <th rowspan="2">Group</th>
+                <th rowspan="2">paper</th>
+                <th rowspan="2">Paper Code</th>
+                <th colspan="2">Theory Marks</th>
+                <th colspan="2">Practical Marks</th>
+                <th colspan="2">Project Marks</th>
+                <th colspan="2">Total Marks</th>
+            </tr>
+            <tr>
+                <th>Full</th>
+                <th>Obtained</th>
+                <th>Full</th>
+                <th>Obtained</th>
+                <th>Full</th>
+                <th>Obtained</th>
+                <th>Obtained</th>
+            </tr>
+            <tr>
+                <th rowspan="3">Language</th>
+                <td>1</td>
+                <td>BEN</td>
+                <td>80</td>
+                <td id="ben"></td>
+                <td></td>
+                <td></td>
+                <td>20</td>
+                <td id="benpra"></td>
+                <td id="bentotal"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>ENG</td>
+                <td>80</td>
+                <td id="eng"></td>
+                <td></td>
+                <td></td>
+                <td>20</td>
+                <td id="engpra"></td>
+                <td id="engtotal"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>MATH</td>
+                <td>80</td>
+                <td id="math"></td>
+                <td></td>
+                <td></td>
+                <td>20</td>
+                <td id="mathpra"></td>
+                <td id="mathtotal"></td>
+            </tr>
+            <tr>
+                <th rowspan="2">Vocational</th>
+                <td>4</td>
+                <td>CMNA</td>
+                <td>30</td>
+                <td id="cmna1"></td>
+                <td>50</td>
+                <td id="cmna2"></td>
+                <td>20</td>
+                <td id="cmna3"></td>
+                <td id="cmnatotal"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>JWPD</td>
+                <td>30</td>
+                <td id="jwpd1"></td>
+                <td>50</td>
+                <td id="jwpd2"></td>
+                <td>20</td>
+                <td id="jwpd3"></td>
+                <td id="jwpdtotal"></td>
+            </tr>
+        </table>
+        <div style="display: flex; gap: 50%;">
+        <table border="1" style="width: 40%; height: 15vh; text-align: center;" cellspacing="0" cellpadding="0">
+            <tr>
+                <th rowspan="2" style="width: 25%; font-size: large;">Grand Total</th>
+                <th style="height: 5vh;">Full Marks</th>
+                <th>Markes Obtained</th>
+            </tr>
+            <tr>
+                <td style="font-size: 22px;">500</td>
+                <td id="totalmark"></td>
+            </tr>
+        </table>
+        <div style="margin-top: 7%;"><button style=" height: 6vh; border-radius: 5px; background-color: aqua;" onclick="shit()">Back TO Home</button></div>
+        </div>
+    </div>
+    <script>
+        var a = localStorage.getItem("NameInput")
+        document.getElementById('namem').value=a;
+        var b = localStorage.getItem("roll")
+        document.getElementById('roll').value=b;
+        var c = localStorage.getItem("reg")
+        document.getElementById('regis').value=c;
+        var d = localStorage.getItem("year")
+        document.getElementById('year').value=d;
+        var e = localStorage.getItem("school")
+        document.getElementById('scholl').value=e;
+        var f = localStorage.getItem("ben")
+        document.getElementById('ben').innerHTML=f;
+        var g = localStorage.getItem("benpra")
+        document.getElementById('benpra').innerHTML=g;
+        var h = localStorage.getItem("eng")
+        document.getElementById('eng').innerHTML=h;
+         var q = localStorage.getItem("engpra")
+        document.getElementById('engpra').innerHTML=q;
+        var i = localStorage.getItem("math")
+        document.getElementById('math').innerHTML=i;
+         var j = localStorage.getItem("mathpra")
+        document.getElementById('mathpra').innerHTML=j;
+         var k = localStorage.getItem("cmna")
+        document.getElementById('cmna1').innerHTML=k;
+         var l = localStorage.getItem("cmnapra")
+        document.getElementById('cmna2').innerHTML=l;
+         var m = localStorage.getItem("cmnapro")
+        document.getElementById('cmna3').innerHTML=m;
+         var n = localStorage.getItem("jwpd")
+        document.getElementById('jwpd1').innerHTML=n;
+         var o = localStorage.getItem("jwpdpra")
+        document.getElementById('jwpd2').innerHTML=o;
+         var p = localStorage.getItem("jwpdpro")
+        document.getElementById('jwpd3').innerHTML=p;
+        var r=localStorage.getItem('bentotal')
+        document.getElementById('bentotal').innerHTML=r;
+        var k=localStorage.getItem('engtotal')
+        document.getElementById('engtotal').innerHTML=k;
+        var l=localStorage.getItem('mathtotal')
+        document.getElementById('mathtotal').innerHTML=l;
+        var s=localStorage.getItem('cmnatotal')
+        document.getElementById('cmnatotal').innerHTML=s;
+        var t=localStorage.getItem('jwpdtotal')
+        document.getElementById('jwpdtotal').innerHTML=t;
+         var u=localStorage.getItem('totalmark')
+        document.getElementById('totalmark').innerHTML=u;
+        function shit()
+        {
+            window.location.href="index.html";
+        }
+    </script>
+</body>
+</html>

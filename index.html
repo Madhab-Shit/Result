@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input
+        {
+            width: 95%;
+            height: 5vh;
+            border: none;
+            outline: none;
+            padding-left: 2%;
+            font-size: 20px;
+        }
+        button
+        {
+            width: 30%;
+            height: 6vh;
+            font-size: 20px;
+            margin: 1% auto;
+            display: block;
+            border-radius: 5px;
+            background-color: aqua;
+        }
+        th
+        {
+            padding-left: 2%;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" style="text-align: left; width: 35%; height: 40vh; font-size: large;"cellspacing="0" cellpadding="0" align="center">
+        <tr>
+            <th>Name: </th>
+            <td style="width: 40%;"><input type="text" placeholder="Name" id="name"></td>
+        </tr>
+        <tr>
+            <th>Roll: </th>
+            <td><input type="tel" placeholder="Roll" id="roll"></td>
+        </tr>
+        <tr>
+            <th>Registration No:</th>
+            <td><input type="tel" placeholder="Registration No:" id="Registration"></td>
+        </tr>
+        <tr>
+            <th>Year: </th>
+            <td><input type="tel" placeholder="Year" id="year"></td>
+        </tr>
+        <tr>
+            <th>Name of Institurtion:</th>
+            <td><input type="text" placeholder="Name of Institurtion" id="school"></td>
+        </tr>
+        <tr style="text-align: center; font-size: x-large;">
+            <th colspan="2">Enter Student Number</th>
+        </tr>
+       <tr>
+            <th rowspan="2">BEN</th>
+            <td><input type="tel" id="ben" placeholder="Theory Number"></td>
+        </tr>
+        <tr>
+            <td><input type="tel" placeholder="project Number" id="benpra"></td>
+        </tr>
+        <tr>
+            <th rowspan="2">ENG</th>
+            <td><input type="tel" id="eng" placeholder="Theory Number"></td>
+        </tr>
+        <tr>
+            <td><input type="tel" placeholder="project Number" id="engpra"></td>
+        </tr>
+        <tr>
+            <th rowspan="2">MATH</th>
+            <td><input type="tel" id="math" placeholder="Theory Number"></td>
+        </tr>
+        <tr>
+            <td><input type="tel" placeholder="project Number" id="mathpra"></td>
+        </tr>
+        <tr>
+            <th rowspan="3">CMNA</th>
+            <td><input type="tel" id="cmna" placeholder="Theory Number"></td>
+        </tr>
+        <tr>
+            <td><input type="tel" placeholder="practical number " id="cmnapra"></td>
+        </tr>
+        <tr>
+            <td><input type="tel" placeholder="project Number" id="cmnapro"></td>
+        </tr>
+        <tr>
+            <th rowspan="3">JWPD</th>
+            <td><input type="tel" id="jwpd" placeholder="Theory Number"></td>
+        </tr>
+        <tr>
+            <td><input type="tel" placeholder="practical number " id="jwpdpra"></td>
+        </tr>
+        <tr>
+            <td><input type="tel" placeholder="project Number" id="jwpdpro"></td>
+        </tr>
+        <tr>
+            <th colspan="2"><button onclick="madhab()">Get Result</button></th>
+        </tr>
+    </table>
+    <script>
+         function madhab()
+        {
+           var a=document.getElementById('name').value;  
+           localStorage.setItem("NameInput",a);          
+            b=document.getElementById('roll').value;
+            localStorage.setItem("roll",b);
+            c=document.getElementById('Registration').value;
+            localStorage.setItem("reg",c);
+            d=document.getElementById('year').value;
+            localStorage.setItem("year",d);
+            e=document.getElementById('school').value;
+            localStorage.setItem("school",e);
+            f=document.getElementById('ben').value;
+            localStorage.setItem("ben",f);
+            f=parseInt(f)
+            g=document.getElementById('benpra').value;
+            localStorage.setItem("benpra",g);
+            g=parseInt(g)
+            h=document.getElementById('eng').value;
+            localStorage.setItem("eng",h);
+            h=parseInt(h)
+            i=document.getElementById('engpra').value;
+            localStorage.setItem("engpra",i);
+            i=parseInt(i)
+            j=document.getElementById('math').value;
+            localStorage.setItem("math",j);
+            j=parseInt(j)
+            k=document.getElementById('mathpra').value;
+            localStorage.setItem("mathpra",k);
+            k=parseInt(k)
+            l=document.getElementById('cmna').value;
+            localStorage.setItem("cmna",l);
+            l=parseInt(l)
+            m=document.getElementById('cmnapra').value;
+            localStorage.setItem("cmnapra",m);
+            m=parseInt(m)
+            n=document.getElementById('cmnapro').value;
+            localStorage.setItem("cmnapro",n);
+            n=parseInt(n)
+            o=document.getElementById('jwpd').value;
+            localStorage.setItem("jwpd",o);
+            o=parseInt(o)
+            p=document.getElementById('jwpdpra').value;
+            localStorage.setItem("jwpdpra",p);
+            p=parseInt(p)
+            q=document.getElementById('jwpdpro').value;
+            localStorage.setItem("jwpdpro",q);
+            q=parseInt(q)
+            bentotal=f+g;
+            localStorage.setItem("bentotal",bentotal);
+            engtotal=h+i;
+            localStorage.setItem("engtotal",engtotal);
+            mathtotal=j+k;
+            localStorage.setItem("mathtotal",mathtotal);
+            cmnatotal=l+m+n;
+            localStorage.setItem("cmnatotal",cmnatotal);
+            jwpdtotal=o+p+q;
+            localStorage.setItem("jwpdtotal",jwpdtotal);
+            totalmark=bentotal+engtotal+mathtotal+cmnatotal+jwpdtotal;
+            localStorage.setItem("totalmark",totalmark);
+           if(a==""||b==""||c==""||d==""||e==""||f==""||g==""||h==""||i==""||j==""||k==""||l==""||m==""||n==""||o==""||p==""||q=="")
+           alert("Fill The From")
+            else if(!/^[a-z A-Z]+$/.test(a))
+            alert("Name Enetr Only Charecter")
+           else if(!/^[0-9]+$/.test(b))
+            alert("Roll Enter Only Number")
+            else if(!/^[0-9]+$/.test(c))
+            alert("Registration Enter Only Number")
+            else if(!/^[0-9]+$/.test(d))
+            alert("Year Enter Only Number")
+            else if(d.length!=4)
+            alert("Year Enter Only Four Number")
+            else if(!/^[a-z A-Z]+$/.test(e))
+            alert("Institurtion Enetr Only Charecter")
+            else if(isNaN(f)||isNaN(g)||isNaN(h)||isNaN(i)||isNaN(j)||isNaN(k)||isNaN(l)||isNaN(m)||isNaN(n)||isNaN(o)||isNaN(p)||isNaN(q))
+            alert("ResultOnly Input number")
+            else if(f>80)
+            alert("Ben Theory Number input less Then or Equal 80")
+            else if(g>20)
+            alert("Ben Project Number input less Then or Equal 20")
+            else if(h>80)
+            alert("Eng Theory Number input less Then or Equal 80")
+            else if(i>20)
+            alert("Eng Project Number input less Then or Equal 20")
+            else if(j>80)
+            alert("Math Theory Number input less Then or Equal 80")
+            else if(k>20)
+            alert("Math Project Number input less Then or Equal 20")
+            else if(l>30)
+            alert("Cmna Theory Number input less Then or Equal 30")
+            else if(m>50)
+            alert("Cmna Practical Number input less Then or Equal 50")
+            else if(n>20)
+            alert("Cmna Project Number input less Then or Equal 20")
+            else if(o>30)
+            alert("Jwpd Theory Number input less Then or Equal 30")
+            else if(p>50)
+            alert("Jwpd Practical Number input less Then or Equal 50")
+            else if(q>20)
+            alert("Jwpd Project Number input less Then or Equal 20")
+             else
+            {
+                window.location.href="about.html";
+                document.getElementById('name').value="";
+                document.getElementById('roll').value=""
+                document.getElementById('Registration').value=""
+                document.getElementById('year').value=""
+                document.getElementById('school').value=""
+                document.getElementById('ben').value=""
+                document.getElementById('benpra').value=""
+                document.getElementById('eng').value=""
+                document.getElementById('engpra').value=""
+                document.getElementById('math').value=""
+                document.getElementById('mathpra').value=""
+                document.getElementById('cmna').value=""
+                document.getElementById('cmnapra').value=""
+                document.getElementById('cmnapro').value=""
+                document.getElementById('jwpd').value=""
+                document.getElementById('jwpdpra').value=""
+                document.getElementById('jwpdpro').value=""
+            }
+        }
+    </script>
+</body>
+</html>
